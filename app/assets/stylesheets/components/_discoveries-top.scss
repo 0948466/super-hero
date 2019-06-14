@@ -1,0 +1,12 @@
+.discoveries-top {
+  &__text {
+    margin-bottom: 25px;
+  }
+  img {
+    display: block;
+    margin: 0 auto 38px;
+    max-width: 100%;
+    box-sizing: border-box;
+    @include border;
+  }
+}

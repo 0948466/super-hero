@@ -1,0 +1,239 @@
+.title-h1 {
+  margin-bottom: 22px;
+  @include responsive-font-size(72);
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1;
+  letter-spacing: -0.7px;
+  text-align: center;
+  color: #ffffff;
+  text-transform: uppercase;
+  @include w320-767 {
+    @include responsive-font-size(60);
+  }
+}
+
+.title-h2 {
+  @include titleH2;
+}
+
+.with-img {
+  position: relative;
+  padding-top: 110px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.title-h3 {
+  @include responsive-font-size(30);
+  font-weight: normal;
+  line-height: 1.27;
+  letter-spacing: normal;
+  text-align: center;
+  color: #fff;
+}
+
+.text-big {
+  margin-bottom: 30px;
+  @include responsive-font-size(24);
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.14;
+  letter-spacing: -0.1px;
+  text-align: center;
+  color: #174425;
+}
+
+.text-md {
+  @include responsive-font-size(20);
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.2;
+  letter-spacing: -0.2px;
+  text-align: center;
+  color: #174425;
+}
+
+.text-16 {
+  margin-bottom: 20px;
+  @include responsive-font-size(16);
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-align: center;
+  color: #fff;
+}
+
+.text-14 {
+  margin-bottom: 20px;
+  @include responsive-font-size(14);
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.14;
+  letter-spacing: -0.1px;
+  text-align: center;
+  color: #174425;
+}
+
+.text-sm {
+  @include responsive-font-size(12);
+  font-weight: normal;
+  line-height: 1.33;
+  letter-spacing: normal;
+  color: #fff;
+}
+
+.border {
+  border: 6px solid #fff;
+}
+
+.color3 {
+  color: $color3;
+}
+
+.color4 {
+  color: $color4;
+}
+
+.btn {
+  @include btn;
+  margin: 0 auto;
+}
+
+.btn-big {
+  @include btn-big;
+}
+
+.btn-outline {
+  @include btn-outline;
+  margin: 0 auto;
+}
+
+.bc-color-1 {
+  background: $bcColor1;
+}
+
+.bc-color-3 {
+  background: $bcColor3;
+}
+
+$width: 270px;
+$height: 60px;
+
+//.radio-btn-wrap {
+//  @include btn-wrap;
+//  input {
+//    display: none;
+//    &:checked {
+//      ~ .radio-btn {
+//
+//        cursor: default;
+//        &:hover {
+//          box-shadow: none;
+//        }
+//      }
+//    }
+//
+//  }
+//  .radio + .radio {
+//    margin-left: 30px;
+//  }
+//  @include w320-767 {
+//    .radio + .radio {
+//      margin-left: 0;
+//    }
+//    & label:not(:last-child) {
+//      margin-bottom: 20px;
+//    }
+//  }
+//}
+//
+//
+//.radio-btn {
+//  @include btn-outline;
+//  @include w768 {
+//    margin: 0;
+//    &:not(:last-child) {
+//      margin-right: 30px;
+//    }
+//  }
+//  @include w320-767 {
+//    margin: 0 auto;
+//  }
+//}
+
+//.btn-wrap {
+//  @include btn-wrap;
+//}
+.input2 {
+  &::placeholder {
+    font-size: 11px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: 0.2px;
+    text-align: center;
+    color: $color6;
+  }
+}
+
+.icon-back {
+  position: absolute;
+  top: 0;
+  left: 12px;
+  width: 40px;
+  height: 40px;
+  transform: translateX(50%);
+  opacity: .5;
+  cursor: pointer;
+  border-radius: 50%;
+  background: #fff asset-data-url("icons/icon-back.svg") no-repeat center / 50%;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  @include w320-767 {
+    left: 0;
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.input {
+  @include input;
+}
+
+.with-lightning {
+  position: relative;
+  padding: 85px 0;
+  z-index: 1;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 217px;
+    background: asset-data-url("icons/icon-lightning.png") no-repeat center;
+    z-index: -1;
+  }
+  &_white {
+    &::before {
+      background: asset-data-url("icons/icon-lightning-white.png") no-repeat center;
+    }
+  }
+}

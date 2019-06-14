@@ -1,0 +1,229 @@
+doctype html
+html lang="ru"
+  head
+    meta charset="UTF-8"
+  body
+    .popup#hero_license.mfp-hide
+      .popup-users
+        h2.popup-users__title-top Удостоверение супергероя
+        .popup-users__wrap
+          .popup-users__left
+            -if Rails.env.production?
+              img src="https://tele-promo.ru/#{ @user.hero.image.url(:big)}" alt=@user.hero.name class="popup-users__img"
+            -else
+              img src="http://127.0.0.1:3000/#{@user.hero.image.url(:big)}" alt=@user.hero.name class="popup-users__img"
+          .popup-users__right
+            p.popup-users__text.popup-users__name
+              |имя
+            p.popup-users__text-big
+              = @user.name
+            p.popup-users__text.popup-users__hero-name
+              |более известный(ая), как
+            p.popup-users__text-big2
+              = @user.hero.name
+            .popup-users__desc
+              - @user.hero.hero_descriptions.each do |item|
+                p.popup-users__text
+                  |#{item.title}: <b>#{item.name}</b>
+
+css:
+  html, body, div, span, applet, object, iframe,
+  h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+  a, abbr, acronym, address, big, cite, code,
+  del, dfn, em, img, ins, kbd, q, s, samp,
+  small, strike, strong, sub, sup, tt, var,
+  u, i, center,
+  dl, dt, dd, ol, ul, li,
+  fieldset, form, label, legend,
+  table, caption, tbody, tfoot, thead, tr, th, td,
+  article, aside, canvas, details, embed,
+  figure, figcaption, footer, header, hgroup,
+  main, menu, nav, output, ruby, section, summary,
+  time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+  }
+
+  article, aside, details, figcaption, figure,
+  footer, header, hgroup, main, menu, nav, section {
+    display: block;
+  }
+
+  body {
+    line-height: 1;
+  }
+
+  ol, ul {
+    list-style: none;
+  }
+
+  blockquote, q {
+    quotes: none;
+  }
+
+  blockquote:before, blockquote:after,
+  q:before, q:after {
+    content: "";
+    content: none;
+  }
+
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  img {
+    max-width: 100%;
+    max-height: 300px;
+  }
+  @import url('https://fonts.googleapis.com/css?family=Rubik:300,400,700,900&display=swap&subset=cyrillic');
+  body {
+    font-family: 'Rubik', sans-serif;
+    background-color: #fff;
+    width: 100%;
+    max-width: 980px;
+  }
+
+  .popup {
+    position: relative;
+    margin: 0 auto;
+    padding: 10px;
+    width: 100%;
+    max-width: 980px;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: #f5f5f5;
+  }
+
+  .popup-users {
+    padding: 20px 35px 31px 35px;
+    border-radius: 30px;
+    background-color: #F9C733;
+  }
+
+  .popup-users__title-top {
+    margin-bottom: 10px;
+    font-size: 43px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.2;
+    letter-spacing: 5px;
+    text-align: center;
+    color: #f5f5f5;
+    text-transform: uppercase;
+  }
+
+  .popup-users__wrap {
+    /*display: flex;*/
+    /*align-items: center;*/
+  }
+
+  .popup-users__wrap:after {
+    content: "";
+    clear: both;
+    display: block;
+  }
+
+  .popup-users__left {
+    float: left;
+    position: relative;
+    padding-right: 20px;
+    margin: 0 auto;
+    z-index: 1;
+    width: 40%;
+    box-sizing: border-box;
+  }
+
+  .popup-users__left::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: url("https://tele-promo.ru/#{image_path 'popup/lightning.png'}") no-repeat center;
+    background-size: contain;
+    z-index: -1;
+  }
+
+  .popup-users__right {
+    float: right;
+    width: 50%;
+    /*max-width: 500px;*/
+    box-sizing: border-box;
+    margin-left: auto;
+    flex-shrink: 0;
+    text-align: left;
+  }
+
+  .popup-users__name {
+    margin-bottom: -11px;
+  }
+
+  .popup-users__text {
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.88;
+    letter-spacing: normal;
+    color: #1d1d1b;
+  }
+
+  .popup-users__text b {
+    white-space: nowrap;
+  }
+
+  .popup-users__text-big {
+    font-size: 30px;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #37444c;
+  }
+
+  .popup-users__text-big2 {
+    font-size: 40px;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #37444c;
+  }
+
+  .popup-users__desc {
+    position: relative;
+    padding-bottom: 30px;
+  }
+
+  .popup-users__desc::before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    right: 20px;
+    width: 107px;
+    height: 58px;
+    background: url("https://tele-promo.ru/#{image_path 'logo/logo-hero2.png'}") no-repeat center;
+    background-size: contain;
+  }
+
+  .popup-users__social {
+    margin-top: 40px;
+  }
+
+  .popup-users__text-bottom {
+    line-height: 1.25;
+  }
+
+
+

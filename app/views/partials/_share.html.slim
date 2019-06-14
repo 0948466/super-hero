@@ -1,0 +1,9 @@
+.share
+  .ya-share1.share_hero#ya-share1 data-services="vkontakte" data-title="#{@user.uid.html_safe}" data-comment=""  data-image="#{request.base_url}#{ @user.snapshot.url(:original)}" data-bare="true" data-url="#{request.original_url}"
+  -if @user.snapshot_user.present?
+    .ya-share2.share_user#ya-share2 data-services="vkontakte" data-title="#{@user.uid.html_safe}" data-comment=""  data-image="#{request.base_url}#{ @user.snapshot_user.url(:original)}" data-bare="true" data-url="#{request.original_url}"
+  p.popup-users__text.popup-users__text-bottom
+    |Поделитесь для
+     <br>
+     участия в конкурсе
+

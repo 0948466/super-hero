@@ -1,0 +1,31 @@
+.more-info {
+  @include sectionPadding;
+  .with-img {
+    &::before {
+      width: 88px;
+      height: 64px;
+      object-fit: contain;
+      background-image: asset-data-url("icons/icon-lupa.png");
+    }
+  }
+  .text-big {
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+
+  & &__text {
+    margin-bottom: 44px;
+  }
+  &__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    @include w320-767 {
+      &:not(:last-child) {
+        margin-bottom: 60px;
+      }
+    }
+  }
+}

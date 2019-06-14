@@ -1,0 +1,52 @@
+.social {
+  display: flex;
+  align-items: center;
+  @include w320-767 {
+    display: none;
+  }
+}
+
+.social__icon-vk {
+  margin-right: 51px;
+  width: 40px;
+  height: 23px;
+  background: center no-repeat;
+  background-size: 100%;
+}
+
+.social__icon-age {
+  width: 53px;
+  height: 23px;
+  background: center no-repeat;
+  background-size: 100%;
+}
+
+body.MainIndex {
+  .social__icon-vk {
+    background-image: asset-data-url("icons/icon-vk.svg");
+
+  }
+  .social__icon-age {
+    background-image: asset-data-url("icons/icon-age.png");
+  }
+}
+
+body.QuizIndex {
+  .social__icon-vk {
+    background-image: asset-data-url("icons/icon-vk-blue.svg");
+
+  }
+  .social__icon-age {
+    background-image: asset-data-url("icons/icon-age2.png");
+  }
+}
+
+body.UsersShow {
+  .social__icon-vk {
+    background-image: asset-data-url("icons/icon-vk.svg");
+
+  }
+  .social__icon-age {
+    background-image: asset-data-url("icons/icon-age.png");
+  }
+}

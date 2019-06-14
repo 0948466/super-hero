@@ -1,0 +1,98 @@
+.edit-photo-popup {
+  position: relative;
+  background: #fff;
+  width: auto;
+  max-width: 800px;
+  margin: 20px auto;
+  input {
+    display: none;
+  }
+  &__text {
+    margin-bottom: 20px;
+    @include responsive-font-size(18);
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    text-align: left;
+    color: $color-text;
+  }
+  &-list {
+    @include responsive-font-size(13);
+    line-height: 1.7;
+  }
+  &-wrap {
+    display: flex;
+    text-align: left;
+    @include w320-767 {
+      flex-direction: column;
+    }
+    &-inner {
+      display: flex;
+      flex-direction: column;
+      .btn {
+        margin-top: auto;
+        margin-right: 20px;
+        @include w320-767 {
+          margin: 0  auto;
+        }
+      }
+    }
+  }
+  button:not(:last-child){
+    margin-right: 20px;
+  }
+
+  #drop-area {
+    border: 1px dashed transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 2px;
+    background-color: #E7EBEE;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    margin-bottom: 20px;
+    @include w320-767 {
+      flex-direction: column;
+    }
+    span {
+      font-size: 12px;
+      color: grey;
+      @include w320-767 {
+        display: none;
+
+      }
+    }
+    .btn {
+      margin-right: 0;
+      @include w320-767 {
+        margin-right: auto;
+      }
+    }
+  }
+  .edit-photo-popup-hidden-txt {
+    margin-bottom: 20px;
+  }
+
+  #drop-area.highlight {
+    border: 1px dashed grey;
+    background-color: #fff;
+  }
+  #gallery {
+    max-height: 400px;
+    max-width: 50%;
+    margin-right: 20px;
+    @include w320-767 {
+      max-width: 100%;
+      margin: 0 auto 20px;
+    }
+  }
+  #gallery img {
+    margin-bottom: 10px;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+}

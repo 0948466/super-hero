@@ -1,0 +1,40 @@
+- set_meta_tags title: "Капитан Фантастика",
+        description: "Капитан Фантастика",
+        keywords: "Капитан Фантастика"
+- set_meta_tags og: { type: 'website', title: "", description: "", url: request.original_url }
+- set_meta_tags og: { image: "#{request.base_url}#{ image_path ('og.png')}" }
+
+section.themes-form-questions
+  .container
+    = simple_form_for(@user, html: {class: "form-reg", autocomplete: 'off'}, remote: false) do |f|
+      .themes-form-questions__item-wrap.themes-form-questions__item-wrap_start
+        .themes-form-questions__start
+          h2.themes-form-questions__start__title.with-lightning
+            |Супергеройский
+               <br>
+               <span>тест</span>
+          .themes-form-questions__load-img
+            .themes-form-questions__text2.js-text-load-img Загрузите свою фотографию для получения удостоверения супергероя по итогам теста.
+            = link_to 'Загрузить своё фото','#edit-photo-popup', class: "themes-form-questions__btn btn-big edit-photo-link btn-popup"
+            = render 'partials/photo_popup'
+          .themes-form-questions__text2 Чтобы получить удостоверение супергероя, необходимо выбрать по одному варианту ответа на каждый вопрос.
+          input.input.themes-form-questions__input-start type="text" placeholder="Ваше имя" name="user[name]" required="true"
+          .themes-form-questions__btn.themes-form-questions__btn_start.btn-big Начать тест
+
+        .themes-form-questions__questions
+          - @questions.each do |question|
+            .themes-form-questions__item class=(question.position === 1 ? 'themes-form-questions__item_active' : '') data-position=question.position
+              h2.themes-form-questions__title #{question.position}/5
+              p.themes-form-questions__text
+                == question.name
+              - question.answers.each do |answer|
+                .radio
+                  input type="radio" value="#{answer.id}" name="user[answer][#{question.id}]" id="answer_#{question.id}_#{answer.id}" required="required"
+                  label.input for="answer_#{question.id}_#{answer.id}" = answer.name
+          .btn.themes-form-questions__btn_questions Дальше
+
+        .themes-form-questions__finish
+          .themes-form-questions__text2 Укажите e-mail, чтобы мы могли связаться с вами в случае победы, и нажмите «Результат», чтобы узнать, каким супергероем являетесь вы!
+          / =f.input :image, input_html: { class: 'inputName' }, placeholder: 'Фото', label: false, wrapper: false, required: false
+          input.input type="email" placeholder="E-mail" name="user[email]" required="required" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+          button.themes-form-questions__btn.btn-big type="submit" Результат

@@ -1,0 +1,189 @@
+$w1920: 1920px;
+$w1000: 1000px;
+$w768: 768px;
+$w320: 320px;
+
+@mixin w1920 {
+  @media only screen and (min-width: #{$w1920}) {
+    @content;
+  }
+}
+@mixin w768-1919 {
+  @media only screen and (min-width: #{$w768}) and (max-width: #{$w1920 - 1px}) {
+    @content;
+  }
+}
+@mixin w768 {
+  @media only screen and (min-width: #{$w768}) {
+    @content;
+  }
+}
+@mixin w320-767 {
+  @media only screen and (max-width: #{$w768 - 1px}) {
+    @content;
+  }
+}
+@mixin w320-999 {
+  @media only screen and (max-width: #{$w1000 - 1px}) {
+    @content;
+  }
+}
+@mixin border {
+  border: 6px solid #fff;
+  background-color: rgba(0, 0, 0, .76);
+}
+
+@mixin titleH2 {
+  margin-bottom: 45px;
+  @include responsive-font-size(50);
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.1;
+  letter-spacing: normal;
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+}
+@mixin titleH2WithBorder {
+  @include titleH2;
+  position: relative;
+  padding-bottom: 28px;
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 100px);
+    width: 200px;
+    height: 2px;
+    background-image: linear-gradient(to right, transparent 50%, $color2 50%);
+    background-size: 16px 100%;
+  }
+}
+
+@mixin sectionPadding {
+  padding: 60px 0;
+}
+$width: 270px;
+$height: 60px;
+
+@mixin btn-outline {
+  display: block;
+  padding: 0 10px;
+  width: $width;
+  height: $height;
+  border-radius: calc(#{$height} / 2);
+  @include responsive-font-size(18);
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: 0.4px;
+  text-align: center;
+  text-transform: uppercase;
+  box-sizing: border-box;
+  background-image: none;
+  border: 2px solid #f35205;
+  color: $color6;
+  line-height: calc(#{$height} - 4px);
+  cursor: pointer;
+  outline: none;
+  &:hover {
+    border-color: #faaa82;
+  }
+  @include w320-767 {
+    height: calc(#{$height} / 3 * 2);
+    line-height: calc(#{$height} / 3 * 2 - 4px);
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+@mixin btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 33px;
+  min-height: 60px;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  border-radius: 30px;
+  background-color: $color-btn;
+  @include responsive-font-size(24);
+  font-weight: bold;
+  line-height: 1.21;
+  letter-spacing: normal;
+  color: #fff;
+  text-transform: uppercase;
+  @include w320-767 {
+    min-height: 50px;
+  }
+  &:hover {
+    filter: brightness(120%);
+    cursor: pointer;
+  }
+}
+
+@mixin btn-big {
+  @include btn;
+  min-width: 300px;
+  min-height: 80px;
+  border-radius: 40px;
+  @include w320-767 {
+    min-height: 65px;
+  }
+}
+
+@mixin btn-wrap {
+  display: flex;
+  justify-content: center;
+  @include w320-767 {
+    flex-direction: column;
+  }
+  .btn,
+  .btn-outline {
+    @include w768 {
+      margin: 0;
+      &:not(:last-child) {
+        margin-right: 30px;
+      }
+    }
+  }
+}
+
+@mixin input {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 8px 28px;
+  margin-bottom: 10px;
+  min-height: 60px;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background-color: #fff;
+  border: 2px solid transparent;
+  @include responsive-font-size(20);
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: $color-text;
+  &:hover,
+  &:focus {
+    border-color: #ffdc23;
+    cursor: pointer;
+    outline: none;
+  }
+  &::placeholder {
+    @include responsive-font-size(30);
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: normal;
+    line-height: 60px;
+    color: #e2e2e2;
+  }
+}

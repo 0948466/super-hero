@@ -1,0 +1,19 @@
+footer.main-footer
+  .container
+    h2.main-footer__title
+      |Ты - супергерой!
+    = link_to 'http://kapitan.tv/', target: '_blank', rel: 'noopener', class: 'logo main-footer__logo' do
+      = image_tag_base64 'logo/logo-hero.png'
+    p.main-footer__text
+      |Акция «Ты – супергерой!» проходит с 1 по 30 июня 2019 года.
+        <br>
+        С условиями акции, информацией об организаторах, призах, их количестве и порядке
+        <br>
+        получения можно ознакомиться в #{link_to 'Правилах акции «Ты – супергерой!»', root_path << 'Правила_акции_Капитан_Фантастика_-_Ты_супергерой.pdf', class: "link-text", target: '_blank', rel: 'noopener'}.
+        <br>
+        Для зрителей старше 12 лет.
+    = link_to '', 'https://vk.com/kapitanfan', target: '_blank', rel: 'noopener', class: 'main-footer__icon-vk'
+    .main-footer__text-copyright
+      |© 2019 Телекомпания ЗАО «Первый ТВЧ».
+        <br>
+        Все права защищены.

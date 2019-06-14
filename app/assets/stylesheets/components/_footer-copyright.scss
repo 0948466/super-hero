@@ -1,0 +1,12 @@
+.footer-copyright {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  a {
+    margin-right: 39px;
+  }
+  &__text {
+    opacity: .5;
+  }
+}

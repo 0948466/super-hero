@@ -1,0 +1,26 @@
+.themes-top {
+  .container {
+    position: relative;
+    padding-bottom: 40px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    @include w320-767 {
+      background: none !important;
+    }
+  }
+  .text-big {
+    margin-bottom: 40px;
+    color: #fff;
+    text-transform: uppercase;
+    img {
+      margin: 0 5px;
+    }
+  }
+  .title-h1 {
+    margin-bottom: 40px;
+  }
+  .text-16 {
+    margin-bottom: 0;
+  }
+}

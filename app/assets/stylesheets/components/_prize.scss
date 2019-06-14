@@ -1,0 +1,168 @@
+.prize {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 450px;
+  box-sizing: border-box;
+  z-index: 12;
+  @include w320-767 {
+    min-height: 350px;
+  }
+
+  &::after,
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%);
+    background: url(image_path("prizes/background-prize.png")) no-repeat center;
+    background-size: contain;
+  }
+
+  &::before {
+    margin-left: -720px;
+    width: 528px;
+    height: 528px;
+  }
+
+  &::after {
+    margin-left: -60px;
+    width: 668px;
+    height: 668px;
+  }
+
+  &__line-top {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    height:  calc(100% - 100px);
+    background-color: #CC66E2;
+    transform: skew(0, -4deg);
+  }
+
+  &__line-bottom {
+    position: absolute;
+    bottom: -100px;
+    left: 0;
+    width: 100%;
+    height:  calc(100% - 100px);
+    background-color: #CC66E2;
+    transform: skew(0, 4deg);
+  }
+
+  &__for-icons {
+    position: relative;
+    z-index: 5;
+    background-color: #CC66E2;
+
+
+    //&::before {
+    //  content: '';
+    //  position: absolute;
+    //  top: -75px;
+    //  left: calc(50% - 300px);
+    //  transform: translateX(-50%) translateY(-50%);
+    //  width: 231px;
+    //  height: 190px;
+    //  background: url(image_path("icons/icon-cloud.png")) no-repeat center;
+    //  z-index: 13;
+    //}
+  }
+
+  &__text-wrap {
+    position: relative;
+    z-index: 3;
+
+    @include w768 {
+      &::after {
+        content: '';
+        position: absolute;
+        top: calc(50% + 40px);
+        right: -10px;
+        transform: translate(100%, -50%);
+        background: url(image_path("prizes/vr-boy.png")) no-repeat center;
+        background-size: contain;
+        width: 306px;
+        height: 771px;
+        z-index: 2;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px;
+    @include responsive-font-size(60);
+    font-weight: 900;
+    color: #ffdc23;
+    text-align: left;
+
+    span {
+      font-weight: 300;
+      color: #fff;
+    }
+  }
+
+  &__text {
+    margin: 0 auto 15px;
+    max-width: 780px;
+    box-sizing: border-box;
+    @include responsive-font-size(26);
+    line-height: 1.384;
+    color: #fff;
+    text-align: left;
+  }
+
+  &__text-small {
+    position: relative;
+    padding-bottom: 70px;
+    @include responsive-font-size(14);
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.37;
+    letter-spacing: normal;
+    color: #fff;
+    text-align: left;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -270px;
+      width: 297px;
+      height: 208px;
+      background: url(image_path("prizes/boom.png")) no-repeat center;
+      background-size: contain;
+      @include w320-767 {
+        margin-left: 0;
+        width: calc(297px / 2);
+        height: calc(208px / 2);
+      }
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: calc(100% + 45px);
+      left: 50%;
+      margin-left: -500px;
+      width: 478px;
+      height: 376px;
+      background: url(image_path("prizes/vr-glasses.png")) no-repeat center;
+      background-size: contain;
+      @include w320-767 {
+        margin-left: -150px;
+        width: calc(478px / 2);
+        height: calc(376px / 2);
+      }
+    }
+  }
+
+  &__img-vr-boy {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}

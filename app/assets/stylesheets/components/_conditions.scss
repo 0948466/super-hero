@@ -1,0 +1,64 @@
+.conditions {
+  padding: 300px 0;
+  background: #fff url(image_path("background/background-sections.png")) no-repeat center;
+  background-size: cover;
+  @include w320-767 {
+    padding: 150px 0;
+  }
+
+  &__title {
+    margin-bottom: 50px;
+    @include responsive-font-size(50);
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    color: $color-text;
+
+  }
+  &__list {
+    margin: 0 auto 100px;
+    max-width: 780px;
+    box-sizing: border-box;
+    li {
+      position: relative;
+      padding-left: 90px;
+      margin-bottom: 40px;
+      @include responsive-font-size(26);
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.66;
+      letter-spacing: normal;
+      text-align: left;
+      color: #000;
+      @include w320-767 {
+        padding-left: 30px;
+      }
+      &::before {
+        position: absolute;
+        top: 4px;
+        left: 0;
+        @include responsive-font-size(36);
+        font-weight: bold;
+        line-height: 1;
+        color: #ffb300;
+      }
+      &:nth-of-type(1)::before {
+        content: '1';
+      }
+      &:nth-of-type(2)::before {
+        content: '2';
+      }
+      &:nth-of-type(3)::before {
+        content: '3';
+      }
+    }
+  }
+  &__btn {
+    text-transform: capitalize;
+
+  }
+
+}

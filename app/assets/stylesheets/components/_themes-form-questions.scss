@@ -1,0 +1,126 @@
+.themes-form-questions {
+  &__btn {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  &__item-wrap {
+    margin: 0 auto 200px;
+    max-width: 780px;
+    width: 100%;
+    box-sizing: border-box;
+    &_start {
+      .themes-form-questions__start {
+        display: block;
+      }
+    }
+
+    &_questions {
+      padding-top: 60px;
+
+      .themes-form-questions__questions {
+        display: block;
+      }
+    }
+    &_finish {
+      .themes-form-questions__finish {
+        display: block;
+      }
+    }
+    &_start,
+    &_finish {
+      input {
+        margin-bottom: 70px;
+      }
+    }
+  }
+  &__start,
+  &__questions,
+  &__finish {
+    display: none;
+  }
+
+  &__start__title {
+    padding: 100px 0;
+    @include responsive-font-size(50);
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    color: $color-btn;
+    text-transform: uppercase;
+    &::before {
+      width: 117px;
+      height: 253px;
+      background-size: cover;
+    }
+    span {
+      @include responsive-font-size(40);
+      font-weight: bold;
+      color: $color-text;
+      text-transform: lowercase;
+    }
+  }
+  &__load-img {
+    margin-bottom: 80px;
+  }
+  &__item {
+    margin-bottom: 45px;
+    display: none;
+    &_active {
+      display: block;
+    }
+    input {
+      display: none;
+      &:checked + label {
+        background-color: #ffdc23;
+        cursor: default;
+      }
+    }
+    label {
+
+    }
+  }
+  &__title {
+    margin-bottom: 40px;
+    @include responsive-font-size(50);
+    font-weight: 900;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    text-align: center;
+    color: $color-btn;
+  }
+  &__text {
+    margin-bottom: 50px;
+    min-height: 72px;
+    @include responsive-font-size(30);
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    text-align: center;
+    color: $color-text;
+  }
+  &__text2 {
+    margin-bottom: 35px;
+    @include responsive-font-size(24);
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.37;
+    letter-spacing: normal;
+    text-align: left;
+    color: $color-text;
+  }
+  &__btn_questions {
+    width: 100%;
+    max-width: 220px;
+  }
+
+  &__finish {
+    padding-top: 126px;
+  }
+}

@@ -1,0 +1,28 @@
+.ui-widget-header .ui-icon {
+  background-image: url(image_path("icons/ui-icons_444444_256x240.png")) !important;
+}
+
+.ui-widget-header {
+  background-color: #fff;
+}
+
+.ui-state-default {
+  font-size: 18px !important;
+  background-color: #fff !important;
+  border: none !important;
+}
+
+.ui-state-active {
+  background-color: $color2 !important;
+}
+
+.ui-datepicker-trigger {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
+
+.ui-datepicker-title select {
+  background-color: #fff;
+}

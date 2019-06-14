@@ -1,0 +1,13 @@
+.popup {
+  position: relative;
+  margin: 0 auto;
+  padding: 25px;
+  width: 100%;
+  max-width: 980px;
+  box-sizing: border-box;
+  text-align: center;
+  background-color: #f5f5f5;
+  @include w320-767 {
+    padding: 30px 10px;
+  }
+}

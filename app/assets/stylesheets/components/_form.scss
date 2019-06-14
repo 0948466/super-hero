@@ -1,0 +1,77 @@
+.form {
+  text-align: center;
+  &__title {
+    margin: 0 auto 10px;
+    max-width: 450px;
+    font-weight: bold;
+  }
+  .form-item {
+    margin-bottom: 12px;
+    &_checkbox {
+      text-align: center;
+      input {
+        width: auto;
+      }
+    }
+    &:last-of-type {
+      margin-bottom: 18px;
+    }
+  }
+  input {
+    padding: 1em 20px 1em 30px;
+    max-width: 470px;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    background-color: transparent;
+    font-family: 'Roboto', serif;
+    @include responsive-font-size(18);
+    font-weight: normal;
+    line-height: 1.2;
+    letter-spacing: 0.4px;
+    color: #fff;
+    outline: none;
+
+    &::placeholder {
+      color: #fff;
+      opacity: .5;
+    }
+
+  }
+
+  & &__btn {
+    display: block;
+    padding: 1.08em 10px;
+    margin: 0 auto 22px;
+    width: 100%;
+    max-width: 270px;
+    box-sizing: border-box;
+    @include responsive-font-size(18);
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: 0.4px;
+    text-align: center;
+    color: #fff;
+    border-radius: 30px;
+    border: none;
+    background-image: linear-gradient(to right, #a70000, #f90e01);
+    cursor: pointer;
+    &.disabled {
+      cursor: default;
+      background: #d0d7dd;
+    }
+  }
+
+  .user_date_birthday {
+    position: relative;
+    max-width: 470px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .checkbox__label {
+    user-select: none;
+  }
+}

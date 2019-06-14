@@ -1,0 +1,9 @@
+rendered_objects = "<%=j render('users/popup',  user: @user, social: @social, rank: @rank,
+ answer_correct: @answer_correct, count_question: @count_question )  %>";
+
+$.magnificPopup.open({
+    items: {
+        src: rendered_objects,
+    },
+    type: 'inline',
+});

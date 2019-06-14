@@ -1,0 +1,107 @@
+.instructions {
+  @include sectionPadding;
+  padding-bottom: 75px;
+  .with-img {
+    &::before {
+      width: 87px;
+      height: 63px;
+      object-fit: contain;
+      background-image: asset-data-url("icons/icon-question.png");
+    }
+  }
+  img {
+    margin-bottom: 20px;
+    max-height: 50vw;
+  }
+  .text-md {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+  }
+  &__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 35px;
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      max-width: 139px;
+      width: 100%;
+      height: 27px;
+      transform: translateX(-50%);
+      background: no-repeat center / contain;
+      @include w320-767 {
+        max-width: 80vw;
+      }
+    }
+    &:nth-child(1)::after {
+      background-image: asset-data-url("border/lines-1.png");
+    }
+    &:nth-child(2)::after {
+      background-image: asset-data-url("border/lines-2.png");
+    }
+    &:nth-child(3)::after {
+      background-image: asset-data-url("border/lines-3.png");
+    }
+    @include w320-767 {
+      &:not(:last-child) {
+        margin-bottom: 60px;
+      }
+    }
+    img {
+      margin-bottom: 20px;
+      max-width: 100%;
+      max-height: 80vw;
+    }
+  }
+  &__list {
+    display: inline-block;
+    vertical-align: top;
+    list-style: none;
+    @include w320-767 {
+      padding: 0 5px;
+    }
+    li {
+      position: relative;
+      padding-left: 101px;
+      margin: 0 auto 36px;
+      @include responsive-font-size(22);
+      font-weight: normal;
+      line-height: 1.36;
+      letter-spacing: normal;
+      text-align: left;
+      color: #fff;
+      @include w320-767 {
+        padding-left: 60px;
+        br {
+          display: none;
+        }
+      }
+      &::before {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        @include responsive-font-size(70);
+        font-weight: bold;
+        line-height: 1;
+        letter-spacing: normal;
+        color: $color2;
+      }
+      &:nth-of-type(1)::before {
+        content: '01';
+      }
+      &:nth-of-type(2)::before {
+        content: '02';
+      }
+      &:nth-of-type(3)::before {
+        content: '03';
+      }
+    }
+  }
+}

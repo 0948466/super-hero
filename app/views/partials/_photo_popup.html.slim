@@ -1,0 +1,17 @@
+#edit-photo-popup.popup.edit-photo-popup.mfp-hide
+  p.edit-photo-popup__text Вы можете загрузить фотографию с расширением PNG, JPG (JPEG), TIFF, GIF и размером не более 10MB. Переместите изображение в область ниже.
+  div#drop-area
+    span.hidden-xs Перетащите файл сюда или нажмите кнопку справа →
+    input#fileElem multiple='multiple' type="file" name="file" accept="image/*"
+    label.btn.b-green for="fileElem" Выберите файл
+  .edit-photo-popup-wrap
+    div#gallery
+    .edit-photo-popup-wrap-inner
+      ul.edit-photo-popup-list
+        li Пожалуйста, используйте только собственную фотографию.
+        li Допустимые форматы изображения — JPG, PNG, GIF и TIFF.
+        li Допустимый размер изображения — не более 10 МБ.
+      p.edit-photo-popup-hidden-txt.hidden Выберите квадратную область на фото, которая будет отображаться на удостоверении супергероя, а затем нажмите кнопку "Сохранить фото".
+      .btn.b-green.hidden#btnGetCropped disabled='disabled' Сохранить фото
+      input#getBase64 type="hidden" name="user[image]"
+

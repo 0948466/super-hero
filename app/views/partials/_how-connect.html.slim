@@ -1,0 +1,29 @@
+.how-connect
+  .how-connect__line-top
+  .container.how-connect__container
+    h2.how-connect__title
+      |Как подключить ТРИКОЛОР
+    .how-connect__desc
+      .how-connect__item
+        = image_tag_base64 'how-connect/1.png'
+        p.how-connect__text
+          |Оставить заявку <br>на подключение
+      .how-connect__arrow
+        = image_tag_base64 'how-connect/arrow.png'
+      .how-connect__item
+        = image_tag_base64 'how-connect/2.png'
+        p.how-connect__text
+          |Забрать <br>оборудование
+      .how-connect__arrow
+        = image_tag_base64 'how-connect/arrow.png'
+      .how-connect__item
+        = image_tag_base64 'how-connect/3.png'
+        p.how-connect__text
+          |Установить самостоятельно <br>или c помощью дилера
+      .how-connect__arrow
+        = image_tag_base64 'how-connect/arrow.png'
+      .how-connect__item
+        = image_tag_base64 'how-connect/4.png'
+        p.how-connect__text
+          |Наслаждаться <br>просмотром
+    = link_to 'Подключить', 'https://promo.tricolor.tv/yes1/', class: 'btn-big js-btn-goal', target: '_blank', rel: 'noopener'

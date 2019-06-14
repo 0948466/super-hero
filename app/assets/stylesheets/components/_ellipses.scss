@@ -1,0 +1,60 @@
+.ellipses {
+  position: relative;
+  margin: 0 auto 54px;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+  }
+  &::before {
+    right: calc(19px + 45px);
+  }
+  &::after {
+    left: calc(19px + 45px);
+  }
+  &_1 {
+    background-color: $color6;
+    &::before {
+      background-color: #00ff00;
+    }
+    &::after {
+      background-color: $color3;
+    }
+  }
+  &_2 {
+     background-color: #4cb911;
+     &::before {
+       background-color: #fb6504;
+     }
+     &::after {
+       background-color: #ffff00;
+     }
+   }
+  &_3 {
+    background-color: #fb6504;
+    &::before {
+      background-color: #ffff00;
+
+    }
+    &::after {
+      background-color: $color3;
+    }
+  }
+  &_4 {
+    background-color: #fb6504;
+    &::before {
+      background-color: #4cb911;
+    }
+    &::after {
+      background-color: #ffff00;
+    }
+  }
+}

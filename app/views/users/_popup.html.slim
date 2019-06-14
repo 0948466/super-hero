@@ -1,0 +1,27 @@
+.popup#hero_license.mfp-hide
+  .popup-users class=(@user.image.present? ? 'popup-users_show-user' : '')
+    h2.popup-users__title-top Удостоверение супергероя
+    .popup-users__wrap
+      .popup-users__left class=(@user.image.present? ? 'popup-users__left_flex' : '')
+        - if @user.image.present?
+          = image_tag @user.image.url(:original), alt: @user.hero.name, class: 'popup-users__img popup-users__img_user'
+          = image_tag @user.hero.image.url(:big), alt: @user.hero.name, class: 'popup-users__img popup-users__img_hero'
+        -else
+          = image_tag @user.hero.image.url(:big), alt: @user.hero.name, class: 'popup-users__img'
+      .popup-users__right
+        p.popup-users__text.popup-users__name
+          |имя
+        p.popup-users__text-big
+          = @user.name
+        p.popup-users__text.popup-users__hero-name
+          |более известный(ая), как
+        p.popup-users__text-big2
+          = @user.hero.name
+        .popup-users__desc
+          - @user.hero.hero_descriptions.each do |item|
+            p.popup-users__text
+              |#{item.title}: <b>#{item.name}</b>
+        - if @user.image.present?
+          = render 'partials/switch'
+        - if @user.social
+          = render 'partials/share'

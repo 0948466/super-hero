@@ -1,0 +1,152 @@
+.popup-users {
+  padding: 28px 35px 31px 35px;
+  border-radius: 30px;
+  background-color: $color-yellow;
+  .share_user {
+    display: none;
+  }
+  &_show-user {
+    .popup-users__img_hero {
+      display: none;
+    }
+    .popup-users__img_user {
+      display: block;
+      width: 100%;
+      max-width: 242px;
+    }
+    .popup-users__left::before {
+      background: transparent;
+    }
+    .share_user {
+      display: block;
+    }
+    .share_hero {
+      display: none;
+    }
+  }
+
+  .mfp-close {
+    display: none;
+    @include w320-767 {
+      display: block;
+    }
+  }
+  &__title-top {
+    @include responsive-font-size(43);
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.2;
+    letter-spacing: 8.6px;
+    text-align: center;
+    color: #f5f5f5;
+    text-transform: uppercase;
+    @include w320-767 {
+      letter-spacing: 2px;
+      margin-left: -15px;
+    }
+  }
+  &__wrap {
+    display: flex;
+    align-items: center;
+    @include w320-767 {
+      flex-direction: column;
+    }
+  }
+  &__left {
+    position: relative;
+    padding: 50px 20px 50px;
+    margin: 0 auto;
+    z-index: 1;
+    &_flex {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 474px;
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 100%;
+      width: 100%;
+      background: asset-data-url("popup/lightning.png") no-repeat center;
+      background-size: contain;
+      z-index: -1;
+    }
+  }
+
+  &__right {
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
+    margin-left: auto;
+    flex-shrink: 0;
+    text-align: left;
+  }
+  &__name {
+    margin-bottom: -11px;
+  }
+  &__hero-name {
+    margin-bottom: 10px;
+  }
+  &__text {
+    @include responsive-font-size(16);
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.88;
+    letter-spacing: normal;
+    color: #1d1d1b;
+    b {
+      white-space: nowrap;
+    }
+  }
+  &__text-big {
+    @include responsive-font-size(30);
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: $color-text;
+  }
+  &__text-big2 {
+    @include responsive-font-size(40);
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: $color-text;
+  }
+  &__img {
+    &_user {
+      display: none;
+    }
+  }
+  &__desc {
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      top: -20px;
+      right: 0;
+      width: 148px;
+      height: 81px;
+      background: asset-data-url("logo/logo-hero2.png") no-repeat center;
+    }
+  }
+  &__social {
+    margin-top: 40px;
+  }
+  &__text-bottom {
+    line-height: 1.25;
+    @include w320-767 {
+      br {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,125 @@
+.main-header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  z-index: 2;
+
+  .sponsor {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 40px;
+
+    @include w320-767 {
+      width: 100%;
+      margin-right: 0;
+    }
+  }
+
+  .logo {
+    margin-right: 60px;
+    @include w320-767 {
+      margin-right: 10px;
+    }
+
+    img {
+      width: 100px;
+      height: 56px;
+      @include w320-767 {
+        width: calc(100px / 1.1);
+        height: calc(56px / 1.1);
+      }
+    }
+  }
+
+  .logo-tri {
+    margin-right: 60px;
+    @include w320-767 {
+      margin-right: 10px;
+    }
+
+    img {
+      width: calc(180px / 1.1);
+      height: calc(48px / 1.1);
+      @include w320-767 {
+        width: calc(180px / 1.2);
+        height: calc(48px / 1.2);
+      }
+    }
+  }
+
+  .logo-children {
+    width: 87px;
+    height: 60px;
+    background-size: 100% !important;
+    @include w320-767 {
+      width: calc(87px / 1.1);
+      height: calc(60px / 1.1);
+    }
+  }
+
+  .age-limit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    box-sizing: border-box;
+    border: 2px solid #fff;
+    @include responsive-font-size(18);
+    font-weight: normal;
+    letter-spacing: 0.5px;
+    color: #fff;
+    border-radius: 50%;
+    flex-shrink: 0;
+    //@include w320-767 {
+    //  width: 30px;
+    //  height: 30px;
+    //  font-size: 12px;
+    //}
+  }
+}
+
+body.MainIndex {
+  .main-header {
+  }
+  .logo-children {
+    background: asset-data-url("logo/logo-children.png") no-repeat center;
+  }
+}
+
+body.QuizIndex {
+  .logo-children {
+    background: asset-data-url("logo/logo-children2.png") no-repeat center;
+  }
+  .logo-home {
+    margin-left: 60px;
+    @include w320-767 {
+      margin-left: 20px;
+    }
+    width: 40px;
+    height: 40px;
+    background: asset-data-url("icons/icon-home.png") no-repeat center;
+  }
+}
+
+body.UsersShow {
+  .logo-children {
+    background: asset-data-url("logo/logo-children.png") no-repeat center;
+  }
+  .logo-home {
+    margin-left: 60px;
+    @include w320-767 {
+      margin-left: 20px;
+    }
+    width: 40px;
+    height: 40px;
+    background: asset-data-url("icons/icon-home2.png") no-repeat center;
+  }
+}
+.logo-home {
+  @include w320-767 {
+    display: none;
+  }
+}

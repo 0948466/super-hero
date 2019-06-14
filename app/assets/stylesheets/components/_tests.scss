@@ -1,0 +1,39 @@
+.tests {
+  @include sectionPadding;
+  @include w768 {
+    padding-top: 120px;
+  }
+  .with-img {
+    &::before {
+      width: 49px;
+      height: 63px;
+      object-fit: contain;
+      background-image: asset-data-url("icons/cup.png");
+    }
+  }
+  .text-big {
+    margin-bottom: 20px;
+    min-height: 54px;
+    text-transform: uppercase;
+    .color3,
+    .color4 {
+      color: inherit;
+    }
+  }
+  &__img {
+    display: block;
+    margin-bottom: 45px;
+  }
+  &__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    @include w320-767 {
+      &:not(:last-child) {
+        margin-bottom: 60px;
+      }
+    }
+  }
+}

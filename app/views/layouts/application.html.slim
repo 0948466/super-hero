@@ -1,0 +1,51 @@
+doctype html
+html lang="ru"
+  head
+    meta http-equiv="Content-Type" content="text/html; charset=utf-8"
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+    meta content='IE=edge,chrome=1' http-equiv='X-UA-COMPATIBLE'
+    = javascript_include_tag "https://yastatic.net/share2/share.js", async: Rails.env.production?
+    == csrf_meta_tags
+    / meta property="og:image:width" content="985"
+    / meta property="og:image:height" content="695"
+    = display_meta_tags
+    = render 'partials/favicon'
+    = stylesheet_link_tag "application", media: "all", async: Rails.env.production?
+    = javascript_include_tag "application", async: Rails.env.production?
+    == csp_meta_tag
+  body data-js-class=body_js_class class=body_js_class
+    .hidden
+      = flash_messages
+    section.content
+      == render 'partials/header'
+      == yield
+      == render 'partials/footer'
+    javascript:
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'UA-57957207-22');
+
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () {
+                (m[i].a = m[i].a || []).push(arguments)
+            };
+            m[i].l = 1 * new Date();
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(53867728, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true
+        });
+    noscript
+      div
+        img src="https://mc.yandex.ru/watch/53867728" style="position:absolute; left:-9999px;" alt=""

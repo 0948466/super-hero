@@ -1,0 +1,10 @@
+header
+  .container.main-header
+    .sponsor
+      = link_to 'http://kapitan.tv/', target: '_blank', rel: 'noopener', class: 'logo' do
+        = image_tag_base64 'logo/logo-hero.png'
+      = link_to 'https://www.tricolor.tv/', target: '_blank', rel: 'noopener', class: 'logo-tri' do
+        = image_tag_base64 'logo/logo-tricolor-white.png'
+      = link_to '', 'https://www.tricolor.tv/offers/aktsiya-fantasticheskoe-leto/?utm_source=Blk_Action', target: '_blank', rel: 'noopener', class: 'logo-children'
+      = link_to '', '/', class: 'logo-home'
+    = render 'partials/social'

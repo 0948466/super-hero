@@ -1,0 +1,54 @@
+.main-footer {
+  padding: 42px 0;
+  background-color: #f5f5f5;
+  text-align: center;
+
+  &__title {
+    margin-bottom: 15px;
+    @include responsive-font-size(50);
+    font-weight: 900;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    color: $color-text;
+    text-transform: uppercase;
+  }
+  &__logo {
+    display: inline-block;
+    margin-bottom: 23px;
+  }
+
+  &__text {
+    margin-bottom: 20px;
+    @include responsive-font-size(14);
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    color: $color-text;
+  }
+
+  &__icon-vk {
+    display: inline-block;
+    margin-bottom: 18px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: $color-text asset-data-url("icons/icon-vk.svg") no-repeat center;
+    background-size: 65%;
+  }
+  &__text-copyright {
+    @include responsive-font-size(10);
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    text-align: center;
+    color: $color-text;
+  }
+}
+
+

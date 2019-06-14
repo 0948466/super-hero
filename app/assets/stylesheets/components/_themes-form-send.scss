@@ -1,0 +1,16 @@
+.themes-form-send {
+  @include sectionPadding;
+  &__text {
+    margin-bottom: 40px;
+    color: $color5;
+  }
+  .with-img {
+    padding-top: 90px;
+    &::before {
+      width: 72px;
+      height: 63px;
+      object-fit: contain;
+      background-image: asset-data-url("icons/icon-hand.png");
+    }
+  }
+}

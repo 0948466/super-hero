@@ -1,0 +1,9 @@
+- set_meta_tags title: page.seo_title,
+        description: page.seo_description,
+        keywords: page.seo_keywords
+- set_meta_tags og: { type: 'website', title: page.seo_title, description: page.seo_description, url: request.original_url }
+- if page.try(:image)
+  - set_meta_tags og: { image: "#{request.base_url}#{page.image.url(:medium)}" }
+- else
+  - set_meta_tags og: { image: "#{request.base_url}#{ image_path  ('og.png')}" }
+

@@ -1,0 +1,30 @@
+- set_meta_tags title: @user.uid.html_safe,
+        description: "Капитан Фантастика",
+        keywords: "Капитан Фантастика"
+- set_meta_tags og: { type: 'website', title: "", description: "", url: request.original_url }
+- set_meta_tags og: { image: "#{request.base_url}#{ @user.snapshot.url(:original)}" }
+- set_meta_tags vk: { image: "#{request.base_url}#{ @user.snapshot.url(:original)}" }
+.result
+  .container.result__container
+    .result__left
+      .result__img-wrap
+        =image_tag @user.hero.image.url(:big), alt: @user.hero.name, class: 'result__img'
+      ul.result__list
+        - @user.hero.hero_descriptions.each do |item|
+          li
+            span.result__list__title
+              |#{item.title}:
+            span.result__list__text == item.name
+    .result__right
+      h1.result__title
+        |<span>Ты</span>
+         <br>
+         #{@user.hero.name}
+      p.result__text
+        == @user.hero.description
+
+  .container
+    -if @user.social
+      = link_to "Получить удостоверение", "#hero_license", class: "btn-popup btn result__btn"
+
+      = render 'users/popup'

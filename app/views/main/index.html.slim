@@ -1,0 +1,12 @@
+- set_meta_tags title: "Капитан Фантастика",
+        description: "Капитан Фантастика",
+        keywords: "Капитан Фантастика"
+- set_meta_tags og: { type: 'website', title: "", description: "", url: request.original_url }
+- set_meta_tags og: { image: "#{request.base_url}#{ image_path ('og.png')}" }
+
+
+= render 'partials/top'
+= render 'partials/conditions'
+= render 'partials/prize'
+= render 'partials/promo'
+= render 'partials/how-connect'
