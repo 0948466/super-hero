@@ -9,7 +9,7 @@ gem "bootsnap", "~> 1.3", require: false
 gem "coffee-rails", "~> 4.2"
 gem "jbuilder", "~> 2.7"
 gem "pg", "~> 1.0", "< 2.0"
-gem "puma", "~> 3.11"
+gem "puma", "~> 3.12"
 gem "rails", "~> 5.2"
 gem "turbolinks", "~> 5.1"
 gem "uglifier", "~> 4.1"
